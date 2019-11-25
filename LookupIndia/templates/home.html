@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+        
+{% block content %}
+
+    <h1>India Weather App !!</h1><br/> 
+    
+    <!--{{api}}<br><br>
+    
+    {{name}}<br><br> -->
+
+  
+    {% if api %}
+        {% if api == 'Error...'%}
+            there was an Error, please try again...
+        {% else %}            
+            <div class="jumbotron">
+                <h1 class="display-4">{{main_status}}</h1>
+                <p class="lead">Area: {{name}}</p>
+                <p class="lead">ZipCode: {{zipcode}}</p>
+                <p class="lead">Sky: {{description}} </p>
+                <hr class="my-4">
+                <p class="lead">Pressure: {{pressure}} hPA</p>
+                <p class="lead">Temperature: {{temp}} C</p>
+                <p class="lead">Wind Speed: {{wind}} m/s</p>
+                
+            </div>
+        
+        {% endif %}
+    {% endif %}
+    
+
+{% endblock %}
